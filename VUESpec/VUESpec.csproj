@@ -62,7 +62,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specs\BGMapSpriteSpec.cs" />
     <Compile Include="Specs\CharSetSpec.cs" />
+    <Compile Include="Specs\ISpec.cs" />
+    <Compile Include="Specs\TextureSpec.cs" />
+    <Compile Include="Specs\EntityRomSpec.cs" />
+    <Compile Include="Types\DisplacementConverter.cs" />
+    <Compile Include="Types\Displacement.cs" />
+    <Compile Include="Types\GridSize.cs" />
+    <Compile Include="Types\GridSizeConverter.cs" />
+    <Compile Include="Types\Position.cs" />
+    <Compile Include="Types\PositionConverter.cs" />
     <EmbeddedResource Include="Controls\EntitySpec.resx">
       <DependentUpon>EntitySpec.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,10 +97,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Templates\BgmapSpriteROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\CharSetROMSpec.c.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Templates\EntityROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\EntitySpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\TextureROMSpec.c.template">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

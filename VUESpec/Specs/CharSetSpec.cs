@@ -6,7 +6,7 @@ using System.IO;
 namespace VUESpec.Specs
 {
     [DefaultProperty("Name")]
-    public class CharSetSpec
+    public class CharSetSpec : ISpec
     {
         private static readonly string templateFileName = @"Templates\CharSetROMSpec.c.template";
 
@@ -46,7 +46,14 @@ namespace VUESpec.Specs
             }
             set
             {
-                this.definitionName = value.ToUpper() + "_CH";
+                // Standardize separators
+                string name = value.ToUpper().Replace(" ", "_").Replace("-", "_"); 
+                this.definitionName = name;
+                
+                if(!name.EndsWith("_CH"))
+                {
+                    this.definitionName += "_CH";
+                }
             }
         }
 

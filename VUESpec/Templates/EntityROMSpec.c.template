@@ -1,0 +1,24 @@
+﻿EntityROMSpec {EntityName} =
+{{
+	// class allocator
+	__TYPE(Entity),
+
+	// behaviors 
+	{Behaviors},
+
+	// sprites
+	(SpriteSpec**){BGMapSpriteName},
+
+	// collision shapes
+	(ShapeSpec*){ShapeSpec},
+
+	// size
+	// if 0, width and height will be inferred from the first sprite's texture's size
+	{{{Size}}},
+
+	// gameworld's character's type
+	{CharacterType},
+
+	// physical specification
+	(PhysicalSpecification*){PhysicalSpecification},
+}};

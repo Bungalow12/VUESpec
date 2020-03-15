@@ -1,0 +1,34 @@
+﻿TextureROMSpec {TextureName} =
+{{
+	// charset spec
+	(CharSetSpec*)&{CharSetSpecName},
+
+	// bgmap spec
+	{BGMapSpecName},
+
+	// cols (max 64)
+	{Cols},
+
+	// rows (max 64)
+	{Rows},
+
+	// padding for affine/hbias transformations (cols, rows)
+	{{{PaddingCols}, {PaddingRows}}},
+
+	// number of frames, depending on charset's allocation type:
+	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	{FrameCount},
+
+	// palette number (0-3)
+	{PaletteNumber},
+
+	// recyclable
+	{Recyclable},
+
+	// vertical flip
+	{VerticalFlip},
+
+	// horizontal flip
+	{HorizontalFlip},
+}};

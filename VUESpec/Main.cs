@@ -12,8 +12,7 @@ namespace VUESpec
         private static readonly string SpecFilenameFormat = @"{0}\{1}Spec.c";
 
         private Dictionary<string, string> folderMap = new Dictionary<string, string>();
-        // TODO: Bad solution here I'll fix it later
-        private Dictionary<string, EntitySpec> entitySpecMap = new Dictionary<string, EntitySpec>();
+
         public Main()
         {
             InitializeComponent();
@@ -23,14 +22,19 @@ namespace VUESpec
         {
             if(this.OpenImage.ShowDialog() == DialogResult.OK)
             {
-                string fullFilename = this.OpenImage.FileName;
-                string filename = Path.GetFileNameWithoutExtension(fullFilename);
+                string filePath = Path.GetDirectoryName(this.OpenImage.FileName);
+                string filename = Path.GetFileNameWithoutExtension(this.OpenImage.FileName);
 
-                this.folderMap.Add(filename, fullFilename);
+                this.folderMap.Add(filename, filePath);
 
-                EntitySpec entitySpec = new EntitySpec(new CharSetSpec(filename));
+                EntitySpec entitySpec = new EntitySpec(
+                    filename, 
+                    new CharSetSpec(filename), 
+                    new TextureSpec(filename), 
+                    new BGMapSpriteSpec(),
+                    new EntityRomSpec());
+                entitySpec.Name = filename;
                 entitySpec.Dock = DockStyle.Fill;
-                entitySpecMap.Add(filename, entitySpec);
 
                 TabPage tabPage = new TabPage(filename);
                 tabPage.Controls.Add(entitySpec);
@@ -39,20 +43,35 @@ namespace VUESpec
             }
         }
 
-        private void generateSpecsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void renderSpecsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string tabName = Tabs.SelectedTab.Text;
-            string fullFilePath = folderMap[tabName];
-            string specFolder = Path.GetDirectoryName(fullFilePath) + @"\Spec";
-            if (!Directory.Exists(specFolder))
+            for (int i = 0; i < Tabs.TabPages.Count; ++i)
             {
-                Directory.CreateDirectory(specFolder);
-            }
+                var tabPage = Tabs.TabPages[i];
+                string tabName = tabPage.Text;
+                string fullFilePath = folderMap[tabName];
+                string specFolder = fullFilePath + @"\Spec";
+                if (!Directory.Exists(specFolder))
+                {
+                    Directory.CreateDirectory(specFolder);
+                }
 
-            using (TextWriter writer = new StreamWriter(new FileStream(SpecFilenameFormat.Format(specFolder, tabName), FileMode.OpenOrCreate)))
-            {
-                writer.Write(entitySpecMap[tabName].RenderCode(tabName));
+                using (TextWriter writer = new StreamWriter(new FileStream(SpecFilenameFormat.Format(specFolder, tabName), FileMode.OpenOrCreate)))
+                {
+                    var spec = tabPage.Controls.Find(tabName, false)[0] as ISpec;
+                    writer.Write(spec.RenderCode());
+                }
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Tabs.TabPages.Clear();
         }
     }
 }

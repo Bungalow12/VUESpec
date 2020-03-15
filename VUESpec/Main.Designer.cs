@@ -34,6 +34,7 @@
             this.entitySpecToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Tabs = new System.Windows.Forms.TabControl();
             this.OpenImage = new System.Windows.Forms.OpenFileDialog();
+            this.generateSpecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addToolStripMenuItem});
+            this.addToolStripMenuItem,
+            this.generateSpecsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
@@ -72,6 +74,9 @@
             // 
             // Tabs
             // 
+            this.Tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Tabs.Location = new System.Drawing.Point(12, 27);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
@@ -83,6 +88,13 @@
             this.OpenImage.DefaultExt = "*.png";
             this.OpenImage.Filter = "PNG files|*.png|Bitmap files|*.bmp|All files |*.*";
             this.OpenImage.Title = "Open Image";
+            // 
+            // generateSpecsToolStripMenuItem
+            // 
+            this.generateSpecsToolStripMenuItem.Name = "generateSpecsToolStripMenuItem";
+            this.generateSpecsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.generateSpecsToolStripMenuItem.Text = "&Generate Selected Spec";
+            this.generateSpecsToolStripMenuItem.Click += new System.EventHandler(this.generateSpecsToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -109,5 +121,6 @@
         private System.Windows.Forms.ToolStripMenuItem entitySpecToolStripMenuItem;
         private System.Windows.Forms.TabControl Tabs;
         private System.Windows.Forms.OpenFileDialog OpenImage;
+        private System.Windows.Forms.ToolStripMenuItem generateSpecsToolStripMenuItem;
     }
 }

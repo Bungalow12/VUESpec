@@ -27,9 +27,9 @@ namespace VUESpec.Specs
 
         private static readonly Dictionary<DisplayModes, string> DosplayModesMap = new Dictionary<DisplayModes, string>()
         {
-            {DisplayModes.BothDisplays, "__WORLD_ON"},
-            {DisplayModes.LeftDisplay, "__WORLD_LON"},
-            {DisplayModes.RightDisplay, "__WORLD_RON"},
+            {DisplayModes.FlatSprite, "__WORLD_ON"},
+            {DisplayModes.StereoSpriteLeft, "__WORLD_LON"},
+            {DisplayModes.StereoSprtieRight, "__WORLD_RON"},
         };
 
         public enum TransparencySettings
@@ -49,9 +49,9 @@ namespace VUESpec.Specs
 
         public enum DisplayModes
         {
-            BothDisplays,
-            LeftDisplay,
-            RightDisplay
+            FlatSprite,
+            StereoSpriteLeft,
+            StereoSprtieRight
         }
 
         private string definitionName = "";

@@ -17,10 +17,9 @@ namespace VUESpec
         {
             InitializeComponent();
         }
-
         private void entitySpecToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(this.OpenImage.ShowDialog() == DialogResult.OK)
+            if (this.OpenImage.ShowDialog() == DialogResult.OK)
             {
                 string filePath = Path.GetDirectoryName(this.OpenImage.FileName);
                 string filename = Path.GetFileNameWithoutExtension(this.OpenImage.FileName);
@@ -28,9 +27,9 @@ namespace VUESpec
                 this.folderMap.Add(filename, filePath);
 
                 EntitySpec entitySpec = new EntitySpec(
-                    filename, 
-                    new CharSetSpec(filename), 
-                    new TextureSpec(filename), 
+                    filename,
+                    new CharSetSpec(filename),
+                    new TextureSpec(filename),
                     new BGMapSpriteSpec(),
                     new EntityRomSpec());
                 entitySpec.Name = filename;
@@ -43,7 +42,7 @@ namespace VUESpec
             }
         }
 
-        private void renderSpecsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void renderSpecsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             for (int i = 0; i < Tabs.TabPages.Count; ++i)
             {
@@ -64,7 +63,7 @@ namespace VUESpec
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

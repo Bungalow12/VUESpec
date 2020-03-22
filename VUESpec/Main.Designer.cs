@@ -52,10 +52,11 @@
             this.Tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tabs.Location = new System.Drawing.Point(12, 27);
+            this.Tabs.Location = new System.Drawing.Point(14, 31);
+            this.Tabs.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedIndex = 0;
-            this.Tabs.Size = new System.Drawing.Size(776, 411);
+            this.Tabs.Size = new System.Drawing.Size(905, 474);
             this.Tabs.TabIndex = 0;
             // 
             // OpenImage
@@ -71,7 +72,8 @@
             this.buildToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(800, 24);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.MainMenu.Size = new System.Drawing.Size(933, 24);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "MainMenu";
             // 
@@ -137,7 +139,7 @@
             // entitySpecToolStripMenuItem
             // 
             this.entitySpecToolStripMenuItem.Name = "entitySpecToolStripMenuItem";
-            this.entitySpecToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entitySpecToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.entitySpecToolStripMenuItem.Text = "Entit&y Spec";
             this.entitySpecToolStripMenuItem.Click += new System.EventHandler(this.entitySpecToolStripMenuItem_Click);
             // 
@@ -164,22 +166,22 @@
             // renderSpecsToolStripMenuItem
             // 
             this.renderSpecsToolStripMenuItem.Name = "renderSpecsToolStripMenuItem";
-            this.renderSpecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renderSpecsToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.renderSpecsToolStripMenuItem.Text = "&Render Specs";
             this.renderSpecsToolStripMenuItem.Click += new System.EventHandler(this.renderSpecsToolStripMenuItem_Click_1);
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 519);
             this.Controls.Add(this.Tabs);
             this.Controls.Add(this.MainMenu);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Main";
             this.Text = "VUESpec";
             this.MainMenu.ResumeLayout(false);
-            this.MainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

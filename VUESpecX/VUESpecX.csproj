@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\VUESpec\Controls\EntitySpec.cs" Link="Controls\EntitySpec.cs" />
+    <Compile Include="..\VUESpec\Controls\EntitySpec.Designer.cs" Link="Controls\EntitySpec.Designer.cs" />
+    <Compile Include="..\VUESpec\Extensions\RegexExtensions.cs" Link="Extensions\RegexExtensions.cs" />
+    <Compile Include="..\VUESpec\Extensions\StringExtensions.cs" Link="Extensions\StringExtensions.cs" />
+    <Compile Include="..\VUESpec\Main.cs" Link="Main.cs" />
+    <Compile Include="..\VUESpec\Main.Designer.cs" Link="Main.Designer.cs" />
+    <Compile Include="..\VUESpec\Program.cs" Link="Program.cs" />
+    <Compile Include="..\VUESpec\Specs\BGMapSpriteSpec.cs" Link="Specs\BGMapSpriteSpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="..\VUESpec\Specs\CharSetSpec.cs" Link="Specs\CharSetSpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="..\VUESpec\Specs\EntityRomSpec.cs" Link="Specs\EntityRomSpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="..\VUESpec\Specs\ISpec.cs" Link="Specs\ISpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="..\VUESpec\Specs\TextureSpec.cs" Link="Specs\TextureSpec.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="..\VUESpec\Types\Displacement.cs" Link="Types\Displacement.cs" />
+    <Compile Include="..\VUESpec\Types\DisplacementConverter.cs" Link="Types\DisplacementConverter.cs" />
+    <Compile Include="..\VUESpec\Types\GridSize.cs" Link="Types\GridSize.cs" />
+    <Compile Include="..\VUESpec\Types\GridSizeConverter.cs" Link="Types\GridSizeConverter.cs" />
+    <Compile Include="..\VUESpec\Types\Position.cs" Link="Types\Position.cs" />
+    <Compile Include="..\VUESpec\Types\PositionConverter.cs" Link="Types\PositionConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\VUESpec\Controls\EntitySpec.resx" Link="Controls\EntitySpec.resx" />
+    <EmbeddedResource Include="..\VUESpec\Main.resx" Link="Main.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Types\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Specs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\VUESpec\Templates\BgmapSpriteROMSpec.c.template" Link="Templates\BgmapSpriteROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\VUESpec\Templates\CharSetROMSpec.c.template" Link="Templates\CharSetROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\VUESpec\Templates\EntityROMSpec.c.template" Link="Templates\EntityROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\VUESpec\Templates\EntitySpec.c.template" Link="Templates\EntitySpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\VUESpec\Templates\TextureROMSpec.c.template" Link="Templates\TextureROMSpec.c.template">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
